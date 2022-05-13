@@ -36,11 +36,18 @@
 
 h1 {
   font-weight: 300;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 span {
   color: var(--Pale-Blue);
+}
+
+@media (max-width: 350px) {
+  .hours {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -54,11 +61,11 @@ span {
   }
 
   span {
-    font-size: 13px;
+    font-size: 0.813rem;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .stats:hover {
