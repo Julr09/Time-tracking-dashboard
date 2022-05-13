@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~sanitize.css";
+@import "~sanitize.css/assets.css";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Light-red-work: hsl(15, 100%, 70%);
+  --Soft-blue: hsl(195, 74%, 62%);
+  --Light-red-study: hsl(348, 100%, 68%);
+  --Lime-green: hsl(145, 58%, 55%);
+  --Violet: hsl(264, 64%, 52%);
+  --Soft-orange: hsl(43, 84%, 65%);
+  --Very-dark-blue: hsl(226, 41%, 10%);
+  --Dark-blue: hsl(236, 45%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body {
+  background-color: var(--Very-dark-blue);
+  font-family: 'Rubik', sans-serif;
+  color: white;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.active {
+  color: white;
+}
