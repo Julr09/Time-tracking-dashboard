@@ -11,61 +11,23 @@
         </div>
       </div>
       <div class="time">
-        <p class="t" [ngClass]="{'active': selected === 1}" (click)="onDaily()">Daily</p>
-        <p class="t" [ngClass]="{'active': selected === 2}" (click)="onWeekly()">Weekly</p>
-        <p class="t" [ngClass]="{'active': selected === 3}" (click)="onMonthly()">Monthly</p>
+        <p class="time-frame" [ngClass]="{'active': selected === 1}" (click)="onDaily()">Daily</p>
+        <p class="time-frame" [ngClass]="{'active': selected === 2}" (click)="onWeekly()">Weekly</p>
+        <p class="time-frame" [ngClass]="{'active': selected === 3}" (click)="onMonthly()">Monthly</p>
       </div>
     </div>
-    <div class="two" [ngStyle]="{'background-color': 'var(--Light-red-work)'}">
-      <div class="icon" [ngStyle]="{'background-image':'url(./assets/images/icon-work.svg)'}"></div>
+    <div *ngFor="let d of data; let i = index" class="two" [ngStyle]="{'background-color': colors[i]}">
+      <div class="icon" [ngStyle]="{'background-image': icons[i]}"></div>
+      <div class="stats">
+        <div class="activity">
+          <p>{{d.title}}</p>
+          <img src="assets/images/icon-ellipsis.svg" alt="title">
+        </div>
+        <div class="hours">
+          <h1>{{d.current}}hrs</h1>
+          <span>Last {{time}} - {{d.previous}}hrs</span>
+        </div>
+      </div>
     </div>
-    <app-card
-      title="Work" class="work"
-      [current]="work.current"
-      [previous]="work.previous"
-      [time]="time"
-      icon="url(./assets/images/icon-work.svg)"
-      color="hsl(15, 100%, 70%)">
-    </app-card>
-    <app-card class="play"
-      title="Play"
-      [current]="play.current"
-      [previous]="play.previous"
-      [time]="time"
-      icon="url(./assets/images/icon-play.svg)"
-      color="hsl(195, 74%, 62%)">
-    </app-card>
-    <app-card class="study"
-      title="Study"
-      [current]="study.current"
-      [previous]="study.previous"
-      [time]="time"
-      icon="url(./assets/images/icon-study.svg)"
-      color="hsl(348, 100%, 68%)">
-    </app-card>
-    <app-card class="exercise"
-      title="Exercise"
-      [current]="exercise.current"
-      [previous]="exercise.previous"
-      [time]="time"
-      icon="url(./assets/images/icon-exercise.svg)"
-      color="hsl(145, 58%, 55%)">
-    </app-card>
-    <app-card class="social"
-      title="Social"
-      [current]="social.current"
-      [previous]="social.previous"
-      [time]="time"
-      icon="url(./assets/images/icon-social.svg)"
-      color="hsl(264, 64%, 52%)">
-    </app-card>
-    <app-card class="self-care"
-      title="Self Care"
-      [current]="selfCare.current"
-      [previous]="selfCare.previous"
-      [time]="time"
-      icon="url(./assets/images/icon-self-care.svg)"
-      color="hsl(43, 84%, 65%)">
-    </app-card>
   </div>
 </main>
